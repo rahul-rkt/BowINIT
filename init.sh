@@ -8,7 +8,7 @@
 
 
 # Make elements
-if [[ -z "$stager" ]]; then
+if [ -z "$stager" ]; then
     # Install BowINIT
     echo -e "\n\e[1;94mInstalling BowINIT, hold on..\e[0;0m"
     dir=~/.bowinit
@@ -45,20 +45,20 @@ fi
 
 
 # First pass
-if [[ $stager -eq 0 ]]; then
+if [ $stager -eq 0 ]; then
     source $bowinit/scripts/update.sh &
 fi
 
 
 # Second pass
-if [[ $stager -eq 1 ]]; then
-#    source $bowinit/scripts/install.sh &
+if [ $stager -eq 1 ]; then
+    source $bowinit/scripts/install.sh &
 fi
 
 
 # Third pass
-if [[ $stager -eq 2 ]]; then
-#    source $bowinit/scripts/configure.sh &
+if [ $stager -eq 2 ]; then
+    source $bowinit/scripts/configure.sh &
 fi
 
 
