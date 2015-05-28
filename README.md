@@ -25,6 +25,7 @@ Save and restart your environment when prompted. The script will auto resume aft
 sudo -s
 source ./BowINIT/init.sh
 ```
+All done, be patient though, it may take some time.
 <br/><br/>
 
 ## Configurations:
