@@ -1,0 +1,36 @@
+{
+    "blackfire": {
+
+        "use": false,
+
+        "config": {
+
+            "id"            : "",
+            "token"         : "",
+            "clientId"      : "",
+            "clientToken"   : ""
+        }
+    },
+
+    "db": {
+
+        "use": "mysql",
+
+        "mysql": {
+
+            "rootPassword"  : "rahulThakur"
+        },
+
+        "postgres": {
+
+        }
+    },
+
+    "opt": {
+
+        "lang"      : "en_US.UTF-8",
+        "timezone"  : "Asia/Hong_Kong",
+        "nano"      : true,
+        "zsh"       : true
+    }
+}

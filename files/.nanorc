@@ -1,0 +1,127 @@
+# -----------------------------------------------------------------------------
+#          FILE:  .nanorc
+#   DESCRIPTION:  Nano configuration file.
+#        AUTHOR:  Rahul Thakur <rahul.rkt@gmail.com>
+#       VERSION:  1.0
+# -----------------------------------------------------------------------------
+
+
+# Includes
+include ~/.nano/syntax/ALL.nanorc
+
+
+# Options
+set autoindent
+# Use auto-indentation.
+
+# unset backup
+# Do not create backup files in filename~.
+
+set backupdir directory ~/.backup/
+# Set the directory where nano puts unique backup files if file backups are enabled.
+
+# unset backwards
+# Do not do backwards searches by default.
+
+# set boldtext
+# Use bold text instead of reverse video text.
+
+set brackets string ""')>]}"
+# Set the characters treated as closing brackets when justifying paragraphs. They cannot contain blank characters. Only closing punctuation, optionally followed by closing brackets, can end sentences. The default value is ""')>]}".
+
+set casesensitive
+# Do case sensitive searches by default.
+
+set const
+# Constantly display the cursor position in the status bar.
+
+unset cut
+# Do not use cut to end of line by default.
+
+# set fill n
+# Wrap lines at column number n. If n is 0 or less, the maximum line length will be the screen width less n columns. The default value is -8.
+
+set historylog
+# Enable ~/.nano_history for saving and reading search/replace strings.
+
+set matchbrackets string "(<[{)>]}"
+# Set the opening and closing brackets that can be found by bracket searches. They cannot contain blank characters. The former set must come before the latter set, and both must be in the same order. The default value is "(<[{)>]}".
+
+unset morespace
+# Not allow use of the blank line below the titlebar as extra editing space.
+
+unset mouse
+# Disable mouse support, if available for your system. When enabled, mouse clicks can be used to place the cursor, set the mark (with a double click), and execute shortcuts. The mouse will work in the X Window System, and on the console when gpm is running.
+
+set multibuffer
+# Allow inserting files into their own buffers.
+
+set noconvert
+# Don't convert files from DOS/Mac format.
+
+unset nofollow
+# Follow symlinks when writing files.
+
+unset nohelp
+# Display the help lists at the bottom of the screen.
+
+unset nonewlines
+# Add newlines to the ends of files.
+
+unset nowrap
+# Wrap text at all.
+
+# set operatingdir directory
+# nano will only read and write files inside directory and its subdirectories. Also, the current directory is changed to here, so files are inserted from this diractory. By default, the operating directory feature is turned off.
+
+unset preserve
+# Don't Preserve the XON and XOFF keys (^Q and ^S).
+
+# set punct string
+# Set the characters treated as closing punctuation when justifying paragraphs. They cannot contain blank characters. Only closing punctuation, optionally followed by closing brackets, can end sentences. The default value is "!.?".
+
+unset quickblank
+# Don't do quick statusbar blanking. Statusbar messages will disappear after 1 keystroke instead of 25.
+
+# set quotestr string
+# I don't use pico/nano for email, so this doesn't apply to me
+# The email-quote string, used to justify email-quoted paragraphs. This is an extended regular expression if your system supports them, otherwise a literal string. The default value is "^([ \t]*[#:>\|}])+" if you have extended regular expression support, or "> " otherwise. Note that '\t' stands for a literal Tab character.
+
+unset rebinddelete
+# Don'tiInterpret the Delete key differently so that both Backspace and Delete work properly. You should only need to use this option if Backspace acts like Delete on your system.
+
+unset rebindkeypad
+# Don't interpret the numeric keypad keys so that they all work properly. You should only need to use this option if they don't, as mouse support won't work properly with this option enabled.
+
+unset regexp
+# Don't do extended regular expression searches by default.
+
+set smarthome
+# Make the Home key smarter. When Home is pressed anywhere but at the very beginning of non-whitespace characters on a line, the cursor will jump to that beginning (either forwards or backwards). If the cursor is already at that position, it will jump to the true beginning of the line.
+
+set smooth
+# Use smooth scrolling by default.
+
+set speller aspell
+# Use spelling checker spellprog instead of the built-in one, which calls spell.
+
+set suspend
+# Allow nano to be suspended.
+
+set tabsize 2
+# Use a tab size of 3 columns. The value of n must be greater than 0. The default value is 8.
+
+unset tabstospaces
+# Don't convert typed tabs to spaces.
+
+unset tempfile
+# Don't save automatically on exit, always prompt.
+
+unset view
+# Allow file modification.
+
+# set whitespace string
+# Set the two characters used to display the first characters of tabs and spaces. They must be single-column characters.
+
+unset wordbounds
+# Do not treat punctuation characters as part of a word.
