@@ -45,7 +45,7 @@ if [[ $(jq .opt.nano $config) = true ]]; then
     make install >> $log 2>&1
     cd ..
     rm -rf nanorc
-    cat $bowinit/files/.nanorc > ~/.nanorc
+    cat $dir/files/.nanorc > ~/.nanorc
 fi
 
 
@@ -54,7 +54,7 @@ if [[ $(jq .opt.zsh $config) = true ]]; then
     apt-get install -y zsh >> $log 2>&1
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh >> $log 2>&1
     git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting >> $log 2>&1
-    cat $bowinit/files/.zshrc >> ~/.zshrc
+    cat $dir/files/.zshrc >> ~/.zshrc
     sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' ~/.zshrc
     chsh -s /bin/zsh >> $log 2>&1
     rc=~/.zshrc

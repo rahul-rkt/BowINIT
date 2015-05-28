@@ -7,22 +7,15 @@
 # -----------------------------------------------------------------------------
 
 
-# Make elements
+# Prelude
 if [ -z "$stager" ]; then
-    # Install BowINIT
-    echo -e "\n\e[1;94mInstalling BowINIT, hold on..\e[0;0m"
-    dir=~/.bowinit
-    if [ -d "$dir" ]; then
-        echo -e "\n\e[1;91mFound previous copy of BowINIT. Please note that all scripts will be refired!\e[0;0m\n"
-        rm -rf $dir
-    fi
-    git clone git://github.com/rahul-rkt/BowINIT.git $dir/BowINIT
-
-    # Determine shell
+    # Determine shell & dir
     sh="$(ps -p $$ --no-headers -o comm=)"
     if [[ $sh == "bash" || $sh == "sh" ]]; then
+        dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
         rc=~/.bashrc
     elif [[ $sh == "zsh" ]]; then
+        dir=$(cd "$(dirname "$0")" && pwd)
         rc=~/.zshrc
     else
         echo -e "\n\e[1;91mUNSUPPORTED SHELL. BowINIT will exit now..\e[0;0m\n"
@@ -30,35 +23,32 @@ if [ -z "$stager" ]; then
     fi
 
     # Make elements
-    log=$dir/log
-    vars=$dir/vars
-    pid=$dir/pid
-    bowinit=$dir/BowINIT
-    config=$bowinit/config.json
+    log=$dir/tmp/log
+    vars=$dir/tmp/vars
+    pid=$dir/tmp/pid
+    config=$dir/config.json
+    mkdir $dir/tmp
     touch $log $vars $pid
     stager=0
-    echo -e "export dir=$dir\nexport log=$log\nexport vars=$vars\nexport pid=$pid\nexport bowinit=$bowinit\nexport config=$config\nexport rc=$rc\nexport stager=$stager\nsource $bowinit/init.sh" > $vars
-
-    # Open config
-    "${EDITOR:-vi}" $config
+    echo -e "export dir=$dir\nexport log=$log\nexport vars=$vars\nexport pid=$pid\nexport config=$config\nexport rc=$rc\nexport stager=$stager\nsource $dir/init.sh" > $vars
 fi
 
 
 # First pass
 if [ $stager -eq 0 ]; then
-    source $bowinit/scripts/update.sh &
+    source $dir/scripts/update.sh &
 fi
 
 
 # Second pass
 if [ $stager -eq 1 ]; then
-    source $bowinit/scripts/install.sh &
+    source $dir/scripts/install.sh &
 fi
 
 
 # Third pass
 if [ $stager -eq 2 ]; then
-    source $bowinit/scripts/configure.sh &
+    source $dir/scripts/configure.sh &
 fi
 
 
