@@ -19,10 +19,11 @@ if [ -z "$stager" ]; then
         rc=~/.zshrc
     else
         echo -e "\n\e[1;91mUNSUPPORTED SHELL. BowINIT will exit now..\e[0;0m\n"
-        exit 0
+        exit $?
     fi
 
     # Make elements
+    rm -rf $dir/tmp/
     log=$dir/tmp/log
     vars=$dir/tmp/vars
     pid=$dir/tmp/pid
@@ -35,26 +36,25 @@ fi
 
 
 # First pass
-if [ $stager -eq 0 ]; then
+if (( $stager == 0 )); then
     source $dir/scripts/update.sh &
 fi
 
 
 # Second pass
-if [ $stager -eq 1 ]; then
+if (( $stager == 1 )); then
     source $dir/scripts/install.sh &
 fi
 
 
 # Third pass
-if [ $stager -eq 2 ]; then
+if (( $stager == 2 )); then
     source $dir/scripts/configure.sh &
 fi
 
 
 # Start scrolling
-#tput reset
-sleep .1
+sleep 1
 trap 'kill -TERM -$(head -n 1 $pid); kill -TERM -$$' INT
 tput csr "$((1+7))" "$((LINES-1))"
 tput clear
@@ -66,4 +66,3 @@ tail -n "$((LINES-1-7))" -f --pid=$(head -n 1 $pid) 2> /dev/null
 
 
 tput reset
-exit 0

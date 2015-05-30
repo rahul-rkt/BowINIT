@@ -18,7 +18,7 @@
 
         "mysql": {
 
-            "rootPassword"  : "rahulThakur"
+            "rootPassword"  : "bowinit"
         },
 
         "postgres": {
@@ -28,7 +28,7 @@
 
     "opt": {
 
-        "lang"      : "en_US.UTF-8",
+        "lang"      : "en_IN.UTF-8",
         "timezone"  : "Asia/Hong_Kong",
         "nano"      : true,
         "zsh"       : true
