@@ -1,10 +1,9 @@
-# BowINIT *(development halted)*
+# BowINIT
+>:exclamation: As of 28 May 2015, Bowery.io has shutdown and this the development of this script has been halted. Though this script can be used to provision a Homestead like environment on Ubuntu without using Vagrant.
+
 BowInit is aimed at provisioning a barebones [Bowery](http://bowery.io/) environment for Laravel development. This script is intended to mimic the setup you get with [Vagrant](https://www.vagrantup.com/)/[Homestead](http://laravel.com/docs/5.0/homestead) over Bowery.
 
 :grey_exclamation: For best results, use this script on a fresh Bowery instance. This script has been tested for Bash and ZSH.
-<br/><br/>
-
-<div style="color:indianred">:exclamation: As of 28 May 2015, Bowery.io has shutdown and this the development of this script has been halted. Though this script can be used to provision a Homestead like environment on Ubuntu without using Vagrant.</div>
 <br/><br/>
 
 
